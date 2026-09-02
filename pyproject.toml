@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "portfolio-ai-api"
+version = "1.0.0"
+description = "Sanitized portfolio sample for a local LLM JSON API"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "ollama>=0.4,<1",
+  "uvicorn>=0.34,<1"
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
