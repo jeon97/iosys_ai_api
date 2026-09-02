@@ -55,6 +55,10 @@ flowchart LR
 
 V3는 전체 오차와 등급 일치도가 가장 좋았습니다. V2는 Critical 탐지는 높았지만 과대 경보가 많아 운영 피로도가 커질 수 있다고 판단했습니다. 상세 내용은 [모델 평가](docs/MODEL-EVALUATION.md)에 정리했습니다.
 
+### 일괄 평가와 재실행
+
+여러 VOC를 평가할 때 건별 결과를 체크포인트로 저장했습니다. 재실행 시 완료 건은 건너뛰고, 한 건의 API 오류가 나머지 평가를 중단하지 않게 처리했습니다. 공개 예제는 [BatchProcessor](app/batch.py), 설계 내용은 [일괄 평가 파이프라인](docs/BATCH-PIPELINE.md)에 있습니다.
+
 ## 실행
 
 ```bash
